@@ -15,16 +15,12 @@ class KnapsackTabulation {
             }
         }
         for (int i = 1; i < n; i++) {
-            int[] oldDP = new int[capacity + 1];
-            for (int k = 0; k <= capacity; k++) {
-                oldDP[k] = dp[k];
-            }
-            for (int j = 1; j <= capacity; j++) {
+            for (int j = capacity; j >= 0; j--) {
                 int profit1 = 0;
                 if (weights[0] <= capacity) {
-                    profit1 = profits[i] + oldDP[capacity - weights[j]];
+                    profit1 = profits[i] + dp[capacity - weights[i]];
                 }
-                int profit2 = oldDP[j];
+                int profit2 = dp[j];
                 dp[j] = Math.max(profit1, profit2);
             }
         }
@@ -32,7 +28,7 @@ class KnapsackTabulation {
     }
 
     public static void main(String[] args) {
-        KnapsackBruteForce ks = new KnapsackBruteForce();
+        KnapsackTabulation ks = new KnapsackTabulation();
         int[] profits = {1, 6, 10, 16};
         int[] weights = {1, 2, 3, 5};
         int maxProfit = ks.solveKnapsack(profits, weights, 7);
