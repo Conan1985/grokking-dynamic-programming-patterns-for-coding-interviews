@@ -1,24 +1,21 @@
 package WhatIsDynamicProgramming;
 
-class FibonacciMemoization {
+class FibonacciTabulation {
 
     public int CalculateFibonacci(int n) {
-        int[] dp = new int[n + 1];
-        return calculateFibonacciRecursive(dp, n);
-    }
-
-    private int calculateFibonacciRecursive(int[] dp, int n) {
         if (n < 2)
             return n;
-        if (dp[n] != 0) {
-            return dp[n];
+        int[] dp = new int[n + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        for (int i = 2; i <=n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-        dp[n] = calculateFibonacciRecursive(dp, n - 1) + calculateFibonacciRecursive(dp, n - 2);
         return dp[n];
     }
 
     public static void main(String[] args) {
-        FibonacciMemoization fib = new FibonacciMemoization();
+        FibonacciTabulation fib = new FibonacciTabulation();
         System.out.println("5th Fibonacci is ---> " + fib.CalculateFibonacci(5));
         System.out.println("6th Fibonacci is ---> " + fib.CalculateFibonacci(6));
         System.out.println("7th Fibonacci is ---> " + fib.CalculateFibonacci(7));
