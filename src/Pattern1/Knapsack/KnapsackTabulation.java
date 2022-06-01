@@ -10,17 +10,21 @@ class KnapsackTabulation {
         int n = profits.length;
         int[] dp = new int[capacity + 1];
         for (int j = 0; j <= capacity; j++) {
-            if (weights[0] <= capacity) {
+            if (weights[0] <= j) {
                 dp[j] = profits[0];
             }
         }
         for (int i = 1; i < n; i++) {
-            for (int j = capacity; j >= 0; j--) {
+            int[] oldDP = new int[capacity + 1];
+            for (int k = 0; k <= capacity; k++) {
+                oldDP[k] = dp[k];
+            }
+            for (int j = 1; j <= capacity; j++) {
                 int profit1 = 0;
-                if (weights[0] <= capacity) {
-                    profit1 = profits[i] + dp[capacity - weights[i]];
+                if (weights[i] <= j) {
+                    profit1 = profits[i] + oldDP[j - weights[i]];
                 }
-                int profit2 = dp[j];
+                int profit2 = oldDP[j];
                 dp[j] = Math.max(profit1, profit2);
             }
         }
