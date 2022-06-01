@@ -1,6 +1,6 @@
-package Pattern1;
+package Pattern1.Knapsack;
 
-class Knapsack {
+class KnapsackBruteForce {
 
     public int solveKnapsack(int[] profits, int[] weights, int capacity) {
         // TODO: Write your code here
@@ -20,7 +20,7 @@ class Knapsack {
     }
 
     public static void main(String[] args) {
-        Knapsack ks = new Knapsack();
+        KnapsackBruteForce ks = new KnapsackBruteForce();
         int[] profits = {1, 6, 10, 16};
         int[] weights = {1, 2, 3, 5};
         int maxProfit = ks.solveKnapsack(profits, weights, 7);

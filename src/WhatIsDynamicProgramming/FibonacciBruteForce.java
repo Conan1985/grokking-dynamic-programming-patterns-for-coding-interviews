@@ -1,6 +1,6 @@
 package WhatIsDynamicProgramming;
 
-class Fibonacci {
+class FibonacciBruteForce {
 
     public int CalculateFibonacci(int n) {
         if(n < 2)
@@ -9,7 +9,7 @@ class Fibonacci {
     }
 
     public static void main(String[] args) {
-        Fibonacci fib = new Fibonacci();
+        FibonacciBruteForce fib = new FibonacciBruteForce();
         System.out.println("5th Fibonacci is ---> " + fib.CalculateFibonacci(5));
         System.out.println("6th Fibonacci is ---> " + fib.CalculateFibonacci(6));
         System.out.println("7th Fibonacci is ---> " + fib.CalculateFibonacci(7));
