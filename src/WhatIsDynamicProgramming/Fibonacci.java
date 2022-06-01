@@ -1,4 +1,4 @@
-package whatIsDynamicProgramming;
+package WhatIsDynamicProgramming;
 
 class Fibonacci {
 
