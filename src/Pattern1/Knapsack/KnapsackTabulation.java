@@ -16,9 +16,7 @@ class KnapsackTabulation {
         }
         for (int i = 1; i < n; i++) {
             int[] oldDP = new int[capacity + 1];
-            for (int k = 0; k <= capacity; k++) {
-                oldDP[k] = dp[k];
-            }
+            System.arraycopy(dp, 0, oldDP, 0, capacity + 1);
             for (int j = 1; j <= capacity; j++) {
                 int profit1 = 0;
                 if (weights[i] <= j) {

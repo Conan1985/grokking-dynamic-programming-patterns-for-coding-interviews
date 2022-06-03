@@ -16,9 +16,7 @@ public class SubsetSumTabulation {
         }
         for (int i = 1; i < n; i++) {
             boolean[] oldDP = new boolean[sum + 1];
-            for (int k = 0; k <= sum; k++) {
-                oldDP[k] = dp[k];
-            }
+            System.arraycopy(dp, 0, oldDP, 0, sum + 1);
             for (int s = 1; s <= sum; s++) {
                 if (oldDP[s]) {
                     dp[s] = oldDP[s];
