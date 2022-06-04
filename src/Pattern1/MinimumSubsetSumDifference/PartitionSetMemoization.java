@@ -4,15 +4,6 @@ class PartitionSetMemoization {
 
     public int canPartition(int[] num) {
         // TODO: Write your code here
-        if (num.length == 0) {
-            return 0;
-        }
-        if (num.length == 1) {
-            return num[0];
-        }
-        if (num.length == 2) {
-            return Math.abs(num[0] - num[1]);
-        }
         int n = num.length;
         int sum = 0;
         for (int k : num) {
