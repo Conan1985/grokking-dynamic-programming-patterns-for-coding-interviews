@@ -1,6 +1,6 @@
 package Pattern1.CountofSubsetSum;
 
-public class SubsetSum {
+public class SubsetSumBruteForce {
     public int countSubsets(int[] num, int sum) {
         return counterSubsetsRecursive(num, sum, 0);
     }
@@ -18,7 +18,7 @@ public class SubsetSum {
     }
 
     public static void main(String[] args) {
-        SubsetSum ss = new SubsetSum();
+        SubsetSumBruteForce ss = new SubsetSumBruteForce();
         int[] num = {1, 1, 2, 3};
         System.out.println(ss.countSubsets(num, 4));
         num = new int[]{1, 2, 7, 1, 5};
