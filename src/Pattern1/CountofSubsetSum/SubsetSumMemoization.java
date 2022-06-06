@@ -15,7 +15,10 @@ public class SubsetSumMemoization {
             return 0;
         }
         if (dp[currentIndex][sum] == null) {
-            int sum1 = counterSubsetsRecursive(dp, num, sum - num[currentIndex], currentIndex + 1);
+            int sum1 = 0;
+            if (num[currentIndex] <= sum ) {
+                sum1 = counterSubsetsRecursive(dp, num, sum - num[currentIndex], currentIndex + 1);
+            }
             int sum2 = counterSubsetsRecursive(dp, num, sum, currentIndex + 1);
             dp[currentIndex][sum] = sum1 + sum2;
         }
