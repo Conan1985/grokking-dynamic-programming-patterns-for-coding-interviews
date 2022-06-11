@@ -6,11 +6,11 @@ class FibonacciTabulation {
         if (n < 2) {
             return n;
         }
-        int n1 = 0, n2 = 1, oldN1;
+        int n1 = 0, n2 = 1, oldN2;
         for (int i = 2; i <= n; i++) {
-            oldN1 = n1;
-            n1 = n2;
-            n2 += oldN1;
+            oldN2 = n2;
+            n2 += n1;
+            n1 = oldN2;
         }
         return n2;
     }
