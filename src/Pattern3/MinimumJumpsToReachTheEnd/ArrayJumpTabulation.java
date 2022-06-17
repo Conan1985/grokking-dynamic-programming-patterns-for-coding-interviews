@@ -9,7 +9,7 @@ class ArrayJumpTabulation {
             dp[i] = Integer.MAX_VALUE;
         }
         for (int start = 0; start < n; start ++) {
-            for (int end = start + 1; end <= start + jumps[start] && end < jumps.length; end++) {
+            for (int end = start + 1; end <= start + jumps[start] && end < n; end++) {
                 dp[end] = Math.min(dp[end], dp[start] + 1);
             }
         }
