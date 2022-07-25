@@ -17,7 +17,7 @@ class LPSMemoization {
         if (dp[startIndex][endIndex] == null) {
             if (st.charAt(startIndex) == st.charAt(endIndex)) {
                 int remainLength = endIndex - startIndex - 1;
-                if (remainLength == dp[startIndex + 1][endIndex - 1]) {
+                if (remainLength == findLPSLengthRecursive(dp, st, startIndex + 1, endIndex - 1)) {
                     dp[startIndex][endIndex] = remainLength + 2;
                     return dp[startIndex][endIndex];
                 }
